@@ -1,2 +1,2 @@
 # payment_gateway
-projeto gateway de pagamento com cartões
+projeto para fins didáticos ulizando PHP sem frameworks que reliza transações de cartão com algumas adquirentes
