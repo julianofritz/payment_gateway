@@ -4,6 +4,7 @@ namespace Gateway\Gateway;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
 
 class SendTransaction implements Transaction
 {

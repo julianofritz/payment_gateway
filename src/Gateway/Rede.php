@@ -5,9 +5,9 @@ namespace Gateway\Gateway;
 
 class Rede extends Gateway
 {
-    const REDE_KEY = 'rede_key';
+    const REDE_PV = '10007380';
 
-    const REDE_SECRET = 'rede_secret'; 
+    const REDE_TOKEN = 'f3971b22414b40a8ad27648dbf210eb2'; 
 
     const REDE_URI = 'https://api.userede.com.br';
 
@@ -15,7 +15,7 @@ class Rede extends Gateway
 
     public function mountHeader(): array
     {
-        $authToken = base64_encode(self::REDE_KEY . ':' . self::REDE_SECRET);
+        $authToken = base64_encode(self::REDE_PV . ':' . self::REDE_TOKEN);
 
         return [
             'Authorization' => 'Basic '. $authToken,
