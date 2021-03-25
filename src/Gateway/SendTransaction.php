@@ -54,8 +54,8 @@ class SendTransaction implements Transaction
             'base_uri' => $this->uri,
             'verify' => false,
         ]);
-
-        return $client->request($this->httpMethod, $this->route, $this->request);
+        
+        return $client->request($this->httpMethod, $this->route, $this->request);        
     }
 
 }

@@ -34,14 +34,9 @@ class Gateway implements IGateway
 
     public function authorize()
     {
-        try {
-            $request = $this->config();
+        $request = $this->config();
 
-            $this->sendTransaction->send();
-        } catch (GuzzleException  $e) {
-            throw new GuzzleException($e->getResponse()->getBody()->getContents());
-        }
-
+        $this->sendTransaction->send();
     }
 
     public function mountBody()

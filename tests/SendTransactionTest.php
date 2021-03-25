@@ -6,6 +6,7 @@ use Gateway\Gateway\Rede;
 use Gateway\Gateway\SendTransaction;
 use Gateway\Gateway\Transaction;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
 use PHPUnit\Framework\TestCase;
 
 class SendTransactionTest extends TestCase
@@ -50,6 +51,7 @@ class SendTransactionTest extends TestCase
         $sendTransaction->setRoute('/desenvolvedores/v1/transactions');
 
         $this->expectException('GuzzleHttp\Exception\ClientException');
+
         $sendTransaction->send();
     }
 
