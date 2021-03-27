@@ -13,6 +13,14 @@ class Rede extends Gateway
 
     const REDE_CREDIT_REQUEST = 'credit';
 
+    public function config(): void
+    {
+        $this->request = [
+           'headers' => $this->mountHeader(),
+           'json' => $this->mountBody()
+        ];
+    }
+
     public function mountHeader(): array
     {
         $authToken = base64_encode(self::REDE_PV . ':' . self::REDE_TOKEN);
@@ -37,14 +45,6 @@ class Rede extends Gateway
             'expirationYear'    => $this->payment['expirationYear'],
             'securityCode'      => $this->payment['securityCode'],
             'softDescriptor'    => $this->payment['softDescriptor'],
-        ];
-    }
-
-    public function config(): array
-    {
-        return [
-           'headers' => $this->mountHeader(),
-           'json' => $this->mountBody()
         ];
     }
     
