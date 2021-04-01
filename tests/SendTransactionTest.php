@@ -70,7 +70,7 @@ class SendTransactionTest extends TestCase
         $sendTransaction->send();
     }
 
-    public function testSendValidCreditRedeRequest(): void
+    public function testSendCreditRedeRequestValid(): void
     {
         $this->setRandomOrder();
         $this->mountRedeRequest();
