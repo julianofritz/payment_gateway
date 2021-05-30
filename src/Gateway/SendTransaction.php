@@ -28,6 +28,16 @@ class SendTransaction implements Transaction
      */
     private $httpMethod;
 
+    /**
+     * @var Client
+     */
+    private $client;
+
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
+
     public function setRequest(array $request): void
     {
         $this->request = $request;
